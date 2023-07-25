@@ -1,10 +1,16 @@
-* {
+*, 
+*::before, 
+*::after {
 	box-sizing: border-box;
 	font-family: Poppins, sans-serif;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
 }
 body {
 	margin: 15% auto;
 	width: 600px;
+	background-color: #495468;
 }
 .calc{
 	display: flex;
@@ -17,11 +23,39 @@ body {
 	justify-content: right;
 	flex-basis: 20%;
 	height: 70px;
-	padding: 6px 20px;
-	font-size: 32px;
+	padding: 5px 5px;
+	font-size: 20px;
 	background: #d3d3d3;
 	border-radius: 2px;
 	box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+}
+input[type="text"] {
+	width: 100%;
+	padding: 0 15px;
+	text-align: right;
+	font-weight: 400;
+	font-size: 28px;
+	line-height: inherit;
+	border: 1px solid transparent;
+	border-radius: 2px;
+	background-color: #d3d3d3;
+	transition: all 0.2s ease;
+}
+input::placeholder {
+	font-style: italic;
+	transition: all 0.2s ease;
+}
+input:focus::placeholder {
+	color: #f37c7c;
+}
+input:hover {
+	box-shadow: 0px 1px 4px rgba(93, 93, 93, 0.571);
+}
+input:focus {
+	outline: none;
+	color: #d3d3d3;
+	border: 1px solid #ef75757b;
+	box-shadow: 0px 1px 4px rgba(243, 124, 124, 0.5);
 }
 .buttons {
 	display: flex;
@@ -40,24 +74,23 @@ body {
 }
 
 .button {
-	/* backdrop-filter: blur(5.5px); */
-	font-size: 24px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-basis: 20%;
-	background-color: #777777;
+	background-color: #696969a7;
 	height: 50px;
+	font-size: 24px;
+	font-weight: 400;
+	color: #393939;
 	border: 1px solid transparent;
 	border-radius: 2px;
 	transition: all 0.1s ease-in-out;
 }
-
-.button:hover {
-	border: 1px solid #676767;
-	box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.5);
+.button:last-child {
+	background-color: #393939e3;
+	color: #b9b9b9;
 }
-
 .double {
 	flex-basis: 46.7%;
 }
@@ -65,16 +98,21 @@ body {
 .triple {
 	flex-basis: 73.4%;
 }
-/* .button {
-	width: 50px;
-	height: 50px;
-	background-color: #777777;
-	border: 1px solid transparent;
-	border-radius: 4px;
-	transition: all 0.2s ease-in-out;
-}
-
-section .elem:hover {
+.button:hover {
+	color: #000;
+	background-color: #696969cb;
+	font-size: 25px;
 	border: 1px solid #676767;
 	box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.5);
-} */
+}
+.button:active {
+	background-color: #696969;
+}
+.button:last-child:hover {
+	background-color: #323232;
+	color: #dcdbdb;
+}
+.button:last-child:active {
+	background-color: #1c1c1c;
+	color: #fff;
+}
