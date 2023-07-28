@@ -11,6 +11,7 @@ body {
 	margin: 15% auto;
 	width: 600px;
 	background-color: #495468;
+	overflow: hidden;
 }
 .calc{
 	display: flex;
