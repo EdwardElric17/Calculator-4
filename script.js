@@ -68,16 +68,19 @@ operators.forEach(operator => {
 });
 operators.forEach(operator => {
 	operator.addEventListener('click', () => {
-		if (operators_set.has(input.value[input.value.length - 1])) {
+		if (input.value === '0' && operator.innerText == '−') {
+			input.value = operator.innerText;
+		} else if (operators_set.has(input.value[input.value.length - 1])) {
 			buffer = input.value;;
 			input.value = buffer.slice(0, -1);
 			input.value += operator.innerText;
-		} else {
+		}
+		else {
 			input.value += operator.innerText;;
-			input.style.fontStyle = 'italic';
-			input.style.color = '#000';
 			result = false;
 		}
+		input.style.fontStyle = 'italic';
+		input.style.color = '#000';
 	})
 });
 /*
